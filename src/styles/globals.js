@@ -1,5 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
+//this global styles file overrides all styles, can be used for fonts, themes etc.
 export const GlobalStyles = createGlobalStyle`
   *,
   *::after,
@@ -11,6 +12,7 @@ export const GlobalStyles = createGlobalStyle`
   }
   body {
     align-items: center;
+    // using styling components and css in js I can pass props to css to make them dynamic
     background: ${({ theme }) => theme.body};
     color: ${({ theme }) => theme.text};
     display: flex;

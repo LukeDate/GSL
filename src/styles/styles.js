@@ -1,5 +1,10 @@
 import styled from 'styled-components';
 
+//this larger file is where all my styled components lie which I then import to 
+//each component that needs them
+//also have some style variables which I reuse e.g. if I want to change all font or button colors can do it with one variable change
+//I have a few animations in here using keyframes and I've used SASS for the css as I like the nesting styles and less repitition of code
+
 //style variables
 const gray = '#9b9b9b';
 const primaryLight = '#11998e';
@@ -103,7 +108,6 @@ export const StyledInput = styled('input')`
     border-bottom: 2px solid ${gray};
     outline: 0;
     font-size: 1.3rem;
-    // color: ${white};
     padding: 7px 0;
     background: transparent;
     transition: border-color 0.2s;
@@ -142,6 +146,7 @@ export const StyledLabel = styled('label')`
     color: ${gray};
 `;
 
+//cool thing here is using the props I can dynamically do animations and color changes
 export const StyledButton = styled('button')`
     @keyframes fadeOut {
         99% {
@@ -151,7 +156,6 @@ export const StyledButton = styled('button')`
         visibility: hidden;
         }
     }
-    
     animation: ${({ save, remove }) => (save && !remove) && '0.5s fadeOut ease'};
     animation-fill-mode: ${({ save, remove }) => (save && !remove) && 'forwards'};
     visibility: ${({ save, remove }) => (save && !remove) && 'hidden'};

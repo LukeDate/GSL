@@ -5,6 +5,8 @@ import { useSelector } from 'react-redux';
 import ListArticles from './listArticles';
 import { StyledList } from '../styles/styles';
 
+//Here I'm rendering a list of all the saved articles, fairly simple component
+
 const SavedArticles = () => {
     const articles = useSelector(state => state);
     return (

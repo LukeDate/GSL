@@ -8,6 +8,9 @@ import { createStore, applyMiddleware } from 'redux';
 import wikiSearchReducer from './redux/reducers/reducer';
 import { Provider } from 'react-redux';
 
+// Redux uses one big global store which I initialised here - this gives my app and components
+// access to the global state
+//wikiReducer is my main reducer for the state and thunk handles my API request to wikipedia
 const store = createStore(
     wikiSearchReducer,
     applyMiddleware(thunkMiddleware)
@@ -15,15 +18,12 @@ const store = createStore(
 
 
 
-
+//To let the app have access to the global state you need to wrap it in the
+//<Provider> component and pass the store
 ReactDOM.render(
 <Provider store={store}>
-    {console.log(store)}
     <App />
 </Provider>
 , document.getElementById('root'));
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister();

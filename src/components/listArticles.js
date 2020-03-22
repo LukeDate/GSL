@@ -14,7 +14,7 @@ const ListArticles = ({ articles, save, results }) => {
     const dispatch = useDispatch();
     //quick chekc here to see if any results come back from the api
     if(results && save) {
-        return <h3>No results for you search, please try another term</h3>
+        return <h3>No results for your search, please try another term</h3>
     } else {
         //simply map the results into a list when returned from api request
         return (
